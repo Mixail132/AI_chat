@@ -90,7 +90,7 @@
       input.value = "";
 
       try {
-        const res = await fetch("http://localhost:8000/chat", {
+        const res = await fetch("https://chosen-eba-itacademy-17e1e27e.koyeb.app:8000/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ message })
