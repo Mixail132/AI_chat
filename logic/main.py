@@ -4,14 +4,17 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from view import get_gemini_answer
+from logic.view import get_gemini_answer
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+STATIC_DIR = ROOT_DIR / "static"
 
 app = FastAPI()
-
 app.mount(
     "/static",
     StaticFiles(
-        directory="../static",
+        directory=STATIC_DIR,
         html=True
     ),
     name="static"
@@ -27,7 +30,7 @@ app.add_middleware(
 
 @app.get("/")
 async def serve_home():
-    return FileResponse("../static/chat.html")
+    return FileResponse(STATIC_DIR / "chat.html")
 
 
 @app.post("/chat")
