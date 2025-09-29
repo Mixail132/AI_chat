@@ -39,7 +39,7 @@ http://127.0.0.1:8000
 - Download and install the `Docker desktop` app.
 - Build the `Docker` image:
 ```commandline
-docker build --build-arg SERVER_NAME="https://api.myserver.com" -t aichat .
+docker build --build-arg SERVER_NAME="http://localhost:8000" -t aichat .
 ```
 - Run the `Docker` container:
 ```commandline

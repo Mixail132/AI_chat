@@ -10,7 +10,7 @@ COPY . .
 
 ARG SERVER_NAME
 ENV SERVER_NAME=${SERVER_NAME}
-RUN sed -i "s|__SERVER_NAME__|${SERVER_NAME}|g" /static/chat.html
+RUN sed -i "s|__SERVER_NAME__|${SERVER_NAME}|g" /app/static/chat.html
 
 EXPOSE 8000
 
