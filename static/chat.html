@@ -81,6 +81,7 @@
   </div>
 
   <script>
+    const SERVER = "__SERVER_NAME__"
     async function sendMessage() {
       const input = document.getElementById("user-input");
       const message = input.value.trim();
@@ -90,7 +91,7 @@
       input.value = "";
 
       try {
-        const res = await fetch("https://chosen-eba-itacademy-17e1e27e.koyeb.app/chat", {
+        const res = await fetch("__SERVER_NAME__/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ message })
