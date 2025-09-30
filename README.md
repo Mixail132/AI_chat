@@ -29,10 +29,6 @@ pip install -r requirements.txt
 ```commandline
 uvicorn main:app --reload
 ```
-- Open your browser and navigate to: 
-```commandline
-http://127.0.0.1:8000
-```
 
 ## Running with `Docker`:
 - Download and install the `Docker desktop` app.
@@ -44,11 +40,12 @@ docker build --build-arg SERVER_NAME=http://localhost:8000 -t aichat .
 ```commandline
 docker build --build-arg SERVER_NAME=https://your-server-name.com -t aichat .
 ```
-
 - Run the `Docker` container:
 ```commandline
 docker run -d -p 8000:8000 aichat
 ```
+
+### Chatting with AI
 - Open your browser and go to: 
 ```commandline
 http://127.0.0.1:8000
