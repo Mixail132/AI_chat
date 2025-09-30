@@ -17,7 +17,6 @@ Clone the repository using `Git` and enjoy chatting with `AI`.
 - Add the following lines to the file:
 ```commandline
 GEMINI_API_KEY=your_api_key
-SERVER_NAME=http://localhost:8000
 ```
 
 ## Running locally
@@ -37,10 +36,15 @@ http://127.0.0.1:8000
 
 ## Running with `Docker`:
 - Download and install the `Docker desktop` app.
-- Build the `Docker` image:
+- Build the `Docker` image on localhost:
 ```commandline
-docker build --build-arg SERVER_NAME="http://localhost:8000" -t aichat .
+docker build --build-arg SERVER_NAME=http://localhost:8000 -t aichat .
 ```
+- Build the `Docker` image on a server:
+```commandline
+docker build --build-arg SERVER_NAME=https://your-server-name.com -t aichat .
+```
+
 - Run the `Docker` container:
 ```commandline
 docker run -d -p 8000:8000 aichat

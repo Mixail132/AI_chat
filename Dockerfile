@@ -9,8 +9,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 ARG SERVER_NAME
-ENV SERVER_NAME=${SERVER_NAME}
-RUN sed -i "s|__SERVER_NAME__|${SERVER_NAME}|g" /app/static/chat.html
+RUN sed -i "s|http://localhost:8000|${SERVER_NAME}|g" /app/static/chat.html
 
 EXPOSE 8000
 
